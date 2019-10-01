@@ -24,6 +24,9 @@
 /public/assets
 .byebug_history
 
+#Ignore API credentials in secrets.yml
+secrets.yml
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 

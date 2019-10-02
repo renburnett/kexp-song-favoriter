@@ -3,14 +3,18 @@ Artist.delete_all
 Album.delete_all
 User.delete_all
 
+# idx = 0
 
-god_song = Song.create(title: "God Only Knows")
-wou_song = Song.create(title: "Wouldnt it be Nice")
+10.times do
+    # song = Song.create(title: Faker::Music::Opera.verdi)
+    # song_1 = Song.create(title: Faker::Music::Phish.song)
+    # band = Artist.create(name: Faker::Music.band)
+    # band.songs << song
+    # band.songs << song_1
+    # Album.create(title: Faker::Music.album, year: 1966, genre: Faker::Music.genre, artist: band)
 
-bboys = Artist.create(name: "The Beach Boys")
-bboys.songs << god_song
-bboys.songs << wou_song
-
-pet_alb = Album.create(title: "Pet Sounds", year: 1966, genre: "Progressive Pop", artist: bboys)
-ron1 = User.create(user_name: "ronny j", user_pass: "123")
-ron1.favorite_songs << god_song
+    # if idx % 2 == 0
+    user = User.create(user_name: Faker::Name.first_name, user_pass: "123")
+        # user.songs << song_1
+    # end
+end

@@ -1,0 +1,8 @@
+<h1> Songs Index </h1>
+<ul>
+    <% @songs.each do |song| %>
+        <li> Artist: <%= song.artist.name %> </li>
+            Song: <%= song.title %> <br>
+        <hr>
+    <% end %>
+</ul>

@@ -1,0 +1,9 @@
+<h1> Users Show </h1>
+
+<p>
+    <%= @user.user_name %> <br>
+    Favorite Songs:
+    <% @user.songs.each do |song| %>
+        <%= song.title %> 
+    <% end %>
+</p>

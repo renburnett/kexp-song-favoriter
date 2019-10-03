@@ -1,15 +1,18 @@
 <h1> Song Show </h1>
-
+<%= render "layouts/nav_bar" %>
 <p>
     Song: <%= @song.title %> <br>
     Artist: <%= @artist.name %> <br>
     Album: <%= @album.title %> <br>
-    Released: <%= @album.year %> <br>
+     <% if @album.year > 0 %>
+        Released: <%= @album.year %>  
+    <%end%> <br>
+    Genre: <%= @album.genre %> <br>
     
     <% if @artist.is_local? %>
-        <%= "This artist is local to Seattle!" %>
+        <b><%= "This artist is local to the PNW!" %></b>
     <% end %>
 
 </p>
 
-<%= link_to "TODO: Add To Favorites"%>
+<h4> <%= link_to("Save to Favorites", save_favorite_path(@song.id), method: :post) %></h4>

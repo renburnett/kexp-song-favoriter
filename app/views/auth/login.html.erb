@@ -1,0 +1,18 @@
+<h1> Login Page</h1>
+<h3>
+    <%= flash[:message] %>
+    <%= flash[:login_please] %>
+</h3>
+
+<%= form_with model: @user do |f| %>
+    <%= f.label :user_email %>
+    <%= f.text_field :email %>
+    <br>
+    <%= f.label :user_pass %>
+    <%= f.text_field :user_pass %>
+    <br>
+    <%= f.submit "Login"%>
+<% end %>
+
+<br>
+<%= link_to "Create New User", new_user_path %>

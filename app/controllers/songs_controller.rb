@@ -91,7 +91,8 @@ class SongsController < ApplicationController
     end
 
     def get_song_genre(song_or_artist)
-        url = "http://api.musixmatch.com/ws/1.1/track.search?q_track=#{song_or_artist}&page_size=6&s_track_rating=desc&apikey=d724f77b3d9ea7b37948f7baecea0291"
+        @musix_api_key = Rails.application.credentials.music_api
+        url = "http://api.musixmatch.com/ws/1.1/track.search?q_track=#{song_or_artist}&page_size=6&s_track_rating=desc&apikey=#{@musix_api_key}"
         response = RestClient.get(url)
         body = JSON.parse(response.body)
         i = 0

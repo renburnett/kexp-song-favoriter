@@ -5,9 +5,18 @@
 .navbar-nav {
     width: 100%;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    margin-top: .5em;
+    margin-bottom: .5em;
 }
 
-.navbar-nav > a {
+.nav-link {
+    margin-right: 3em;
     color: white;
+}
+
+.nav-bar-brand {
+    margin-top: .5em;
+    margin-bottom: .5em;
+    margin-right: 3em;
 }

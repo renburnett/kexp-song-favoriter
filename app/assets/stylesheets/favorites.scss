@@ -1,0 +1,16 @@
+// Place all the styles related to the songs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container-custom {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-custom {
+    max-width: 200px;
+}
+
+.card-img {
+    max-width: 199px;
+}

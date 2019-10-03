@@ -1,7 +1,13 @@
-<%= render "layouts/nav_bar" %>
-<h3 class="h3 mb-3 font-weight-normal"> New Songs </h3>
-<hr>
+<%= render "layouts/nav_bar", locals: { nav_title: "New Songs" } %>
 
-<h3>
-    <%= link_to "fetch recent songs from kexp!", songs_path, method: :post %>
-</h3>
+<div class="container">
+    <div class="row buffer">
+    </div>
+    <div class="row align-items-center">
+        <div class="col">
+            <div class="form-signin">
+                <%= link_to "fetch recent songs from kexp!", songs_path, method: :post, class: "btn btn-primary" %>
+            </div>
+        </div>
+    <div>
+</div>

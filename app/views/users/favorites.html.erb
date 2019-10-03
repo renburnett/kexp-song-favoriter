@@ -1,13 +1,16 @@
-<%= render "layouts/nav_bar" %>
+<% @title = @user.user_name.capitalize + "'s Favorite Songs" %>
+<%= render "layouts/nav_bar", locals: { nav_title: @title } %>
 <%= flash[:message] %>
-<h3 class="h3 mb-3 font-weight-normal"> <%= @user.user_name.capitalize %>'s Favorite Songs </h3>
-<hr>
 
-<p>
+<div class="container-custom">
     <% @user.songs.each do |song| %>
-        Artist: <%= link_to song.artist.name, song_path(song.id) %>  <br>
-        Song: <%= link_to song.title, song_path(song.id) %> <br>
-        <b> <%= link_to "Delete", destroy_favorite_path(song.id), method: :delete %> </b>
-        <hr>
-    <% end %>
-</p>
+        <div class="card card-custom mx-2 mb-3">
+            <img src="https://cdn.pixabay.com/photo/2019/04/04/18/50/cassette-4103530_1280.jpg" alt="" class="card-img">
+            <p>
+                Artist: <%= link_to song.artist.name, song_path(song.id) %>  <br>
+                Song: <%= link_to song.title, song_path(song.id) %> <br> 
+            </p>
+            <b> <%= link_to "Delete", destroy_favorite_path(song.id), method: :delete %> </b>
+        </div>
+<% end %>
+</div>

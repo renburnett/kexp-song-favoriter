@@ -1,6 +1,7 @@
-<h1> Songs Index </h1>
 <%= render "layouts/nav_bar" %>
 <%= flash[:message] %>
+<h3 class="h3 mb-3 font-weight-normal"> All Songs </h3>
+<hr>
 <div>
     <% @songs.each do |song| %>
         Artist: <%= link_to song.artist.name, song_path(song.id) %>  <br>

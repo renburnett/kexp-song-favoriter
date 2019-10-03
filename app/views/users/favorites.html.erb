@@ -1,6 +1,7 @@
-<h1><%= @user.user_name.capitalize %>'s Favorite Songs</h1>
 <%= render "layouts/nav_bar" %>
 <%= flash[:message] %>
+<h3 class="h3 mb-3 font-weight-normal"> <%= @user.user_name.capitalize %>'s Favorite Songs </h3>
+<hr>
 
 <p>
     <% @user.songs.each do |song| %>

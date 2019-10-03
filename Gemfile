@@ -6,6 +6,7 @@ ruby '2.6.1'
 gem 'pg'
 gem 'rest-client'
 gem 'faker'
+gem 'semantic-ui-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'

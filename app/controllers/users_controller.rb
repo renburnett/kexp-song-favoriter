@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
     def destroy_favorite
         @user = current_user()
-        byebug
+        #Delete the join table link, not the song!
         @song_to_destroy = @user.favorite_songs.find_by(song_id: params[:id])
         if @song_to_destroy.delete()
             render :favorites

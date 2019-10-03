@@ -1,4 +1,5 @@
 <h1> Songs Index </h1>
+<%= render "layouts/nav_bar" %>
 <%= flash[:message] %>
 <div>
     <% @songs.each do |song| %>
@@ -7,11 +8,4 @@
         <h4> <%= link_to("Save to Favorites", save_favorite_path(song.id), method: :post) %></h4>
         <hr>
     <% end %>
-
-
-    <p>TODO: ADD NAV BAR</p>
-    <%= link_to "Favorite Songs", favorites_url %> <br>
-
 </div>
-
-    

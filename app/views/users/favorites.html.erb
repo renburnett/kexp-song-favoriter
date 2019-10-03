@@ -1,5 +1,6 @@
-<%= flash[:message] %>
 <h1><%= @user.user_name.capitalize %>'s Favorite Songs</h1>
+<%= render "layouts/nav_bar" %>
+<%= flash[:message] %>
 
 <p>
     <% @user.songs.each do |song| %>
@@ -9,5 +10,3 @@
         <hr>
     <% end %>
 </p>
-
-<h3>TODO: INSERT NAV BAR</h3>

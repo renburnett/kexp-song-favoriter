@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     end
 
     def favorites #show users favorite songs
-        @user = current_user()
+        @user = current_user
     end
 
     def save_favorite
@@ -50,11 +50,6 @@ class UsersController < ApplicationController
     end
         
     private
-
-    #TODO: change to multi-select for adding many songs to your song list (also would need to edit save_favorite)
-    # def favorite_params
-    #     params.require(:favorite_songs).permit(:id)
-    # end
 
     def user_params
         params.require(:user).permit(:email, :user_name, :user_pass)

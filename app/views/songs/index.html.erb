@@ -1,8 +1,17 @@
 <h1> Songs Index </h1>
-<ul>
+<%= flash[:message] %>
+<div>
     <% @songs.each do |song| %>
-        <li> Artist: <%= song.artist.name %> </li>
-            Song: <%= song.title %> <br>
+        Artist: <%= link_to song.artist.name, song_path(song.id) %>  <br>
+        Song: <%= link_to song.title, song_path(song.id) %>
+        <h4> <%= link_to("Save to Favorites", save_favorite_path(song.id), method: :post) %></h4>
         <hr>
     <% end %>
-</ul>
+
+
+    <p>TODO: ADD NAV BAR</p>
+    <%= link_to "Favorite Songs", favorites_url %> <br>
+
+</div>
+
+    

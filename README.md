@@ -1,3 +1,8 @@
+APIs used:
+* https://developer.musixmatch.com/documentation
+* https://legacy-api.kexp.org/
+
+
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -20,5 +25,3 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...

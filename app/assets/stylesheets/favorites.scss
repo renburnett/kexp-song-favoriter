@@ -5,6 +5,8 @@
 .container-custom {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 5em;
+    margin-right: 5em;
 }
 
 .card-custom {
@@ -13,4 +15,8 @@
 
 .card-img {
     max-width: 199px;
+}
+
+.song-show-img {
+    max-width: 299px;
 }

@@ -1,4 +1,4 @@
-# KEXP SONG FAVORITING APP
+# Kexp Song Favoriting App
 
 APIs used:
 * https://developer.musixmatch.com/documentation

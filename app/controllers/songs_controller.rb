@@ -34,7 +34,13 @@ class SongsController < ApplicationController
                 if !songs['results'][idx]['release']
                     song_album = ""
                     song_release_year = 0
+                    song_album_img = "https://cdn.pixabay.com/photo/2019/04/04/18/50/cassette-4103530_1280.jpg"
                 else
+                    if song_album_img = songs['results'][idx]['release']['largeimageuri'] == nil
+                        song_album_img = "https://cdn.pixabay.com/photo/2019/04/04/18/50/cassette-4103530_1280.jpg"
+                    else
+                        song_album_img = songs['results'][idx]['release']['largeimageuri']
+                    end
                     song_album = songs['results'][idx]['release']['name']
                     song_release_year = songs['results'][idx]['releaseevent']['year'].to_i
                 end
@@ -51,8 +57,8 @@ class SongsController < ApplicationController
                         mod_song = song_title.strip().gsub(/[^0-9a-z ]/i, '').split(' ').join('+')
                         parsed_response = get_song_genre(mod_song)
                     end
-    
-                    @album = Album.new(title: song_album, year: song_release_year, genre: parsed_response["genre"])
+                    byebug
+                    @album = Album.new(title: song_album, album_img: song_album_img, year: song_release_year, genre: parsed_response["genre"])
                     @album.save()
                 else 
                     @album = Album.find_by(title: song_album)

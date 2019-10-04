@@ -1,8 +1,9 @@
-<b>
-    <%= link_to "Add New Songs", new_song_path %> || 
-    <%= link_to "All Songs", songs_path %> ||
-    <%= link_to "Favorite Songs", favorites_url %> || 
-    <%= link_to "Logout", logout_path %>
-    <br>
-    <hr>
-</b>
+<nav class="navbar sticky-top navbar-dark bg-primary">
+    <div class="navbar-nav">
+        <span class="nav-bar-brand mod-nav-title"> <%=locals[:nav_title]%> </span>
+        <%= link_to "fetch new songs", new_song_path, class: "nav-link" %>
+        <%= link_to "all songs", songs_path, class: "nav-link" %>
+        <%= link_to "favorite songs", favorites_path, class: "nav-link" %>
+        <%= link_to "logout", logout_path, class: "nav-link" %>
+    </div>
+</nav>

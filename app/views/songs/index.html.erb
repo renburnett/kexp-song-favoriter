@@ -1,11 +1,17 @@
-<h1> Songs Index </h1>
-<%= render "layouts/nav_bar" %>
+<%= render "layouts/nav_bar", locals: { nav_title: "All Songs" } %>
 <%= flash[:message] %>
-<div>
+
+<div class="container-custom">
     <% @songs.each do |song| %>
-        Artist: <%= link_to song.artist.name, song_path(song.id) %>  <br>
-        Song: <%= link_to song.title, song_path(song.id) %>
-        <h4> <%= link_to("Save to Favorites", save_favorite_path(song.id), method: :post) %></h4>
-        <hr>
+        <div class="card card-custom mx-2 mb-3">
+            <img src="<%= song.artist.album.album_img %>" alt="" class="card-img">
+            <p>
+                Artist: <%= link_to song.artist.name, song_path(song.id) %>  <br>
+                Song: <%= link_to song.title, song_path(song.id) %> <br>
+            </p>
+            <b>
+                <%= link_to("Save to Favorites", save_favorite_path(song.id), method: :post) %>
+            </b>
+        </div>
     <% end %>
 </div>

@@ -1,18 +1,30 @@
-<h1> Login Page</h1>
-<h3>
-    <%= flash[:message] %>
-    <%= flash[:login_please] %>
-</h3>
+<div class="container">
+    <div class="row buffer">
+    </div>
+    <div class="row align-items-center">
+        <div class="col">
+            <div class="form-signin">
+                <p>
+                    <%= flash[:message] %>
+                    <%= flash[:login_please] %>
+                </p>
+                <h3 class="h3 mb-3 font-weight-normal"> 
+                    kexp song favoriting app
+                </h3>
 
-<%= form_with model: @user do |f| %>
-    <%= f.label :user_email %>
-    <%= f.text_field :email %>
-    <br>
-    <%= f.label :user_pass %>
-    <%= f.text_field :user_pass %>
-    <br>
-    <%= f.submit "Login"%>
-<% end %>
+                <%= form_with model: @user, class: "form-inlin justify-content-center" do |f| %>
+                    <%= f.label :user_email, class: "sr-only" %>
+                    <%= f.text_field :email, placeholder: "your_dad@hotmail.com" %>
+                    <br>
+                    <%= f.label :user_pass, class: "sr-only" %>
+                    <%= f.text_field :user_pass, placeholder: "password" %>
+                    <br>
+                    <%= f.submit "Login", class: "btn btn-lg btn-primary btn-block"%>
+                <% end %>
 
-<br>
-<%= link_to "Create New User", new_user_path %>
+                <br>
+                <%= link_to "New User", new_user_path, class: "btn btn-info"%>
+            </div>
+        </div>
+    <div>
+</div>

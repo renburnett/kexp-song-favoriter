@@ -1,18 +1,35 @@
-<h1> Song Show </h1>
-<%= render "layouts/nav_bar" %>
-<p>
-    Song: <%= @song.title %> <br>
-    Artist: <%= @artist.name %> <br>
-    Album: <%= @album.title %> <br>
-     <% if @album.year > 0 %>
-        Released: <%= @album.year %>  
-    <%end%> <br>
-    Genre: <%= @album.genre %> <br>
-    
-    <% if @artist.is_local? %>
-        <b><%= "This artist is local to the PNW!" %></b>
-    <% end %>
+<%= render "layouts/nav_bar", locals: { nav_title: "Song Profile" } %>
 
-</p>
 
-<h4> <%= link_to("Save to Favorites", save_favorite_path(@song.id), method: :post) %></h4>
+<div class="container">
+    <div class="row buffer">
+    </div>
+    <div class="row align-items-center">
+        <div class="col">
+            <div class="form-signin">
+                <img src="<%= @album.album_img %>" class="song-show-img">  
+                <p>
+                    Song: <%= @song.title %> <br>
+                    Artist: <%= @artist.name %> <br>
+                    Album: <%= @album.title %> <br>
+                    <% if @album.year > 0 %>
+                        Released: <%= @album.year %>  
+                    <%end%> <br>
+                    Genre: <%= @album.genre %> <br>
+                    
+                    <% if @artist.is_local? %>
+                        <b><%= "This artist is local to the PNW!" %></b>
+                    <% end %>
+                    <hr>
+                    <%= link_to("Save to Favorites", save_favorite_path(@song.id), method: :post, class: "btn btn-primary") %>
+
+                </p>
+            </div>
+        </div>
+    <div>
+</div>
+
+
+
+
+

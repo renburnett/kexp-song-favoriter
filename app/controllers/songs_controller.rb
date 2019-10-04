@@ -57,7 +57,6 @@ class SongsController < ApplicationController
                         mod_song = song_title.strip().gsub(/[^0-9a-z ]/i, '').split(' ').join('+')
                         parsed_response = get_song_genre(mod_song)
                     end
-                    byebug
                     @album = Album.new(title: song_album, album_img: song_album_img, year: song_release_year, genre: parsed_response["genre"])
                     @album.save()
                 else 

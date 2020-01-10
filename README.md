@@ -13,7 +13,7 @@ Within the app you can:
   - favorite songs to your user-library
   - view details about each individual song
   
-NOTE: You might have trouble logging from time to time in as I am hosting all my projects on the free tier of Heroku
+**NOTE: You might have trouble logging from time to time in as I am hosting all my projects on the free tier of Heroku**
 
 Future Goals:
   - fix or remove the genre api call
